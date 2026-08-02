@@ -18,7 +18,7 @@ build() {
     sudo debtap -u
     #run debtap to convert package.
     cd "$srcdir"
-    debtap -q ./stealthsurf.deb
+    debtap -Q ./stealthsurf.deb
     #rename into proper temporary package
     mv *.pkg.tar.zst "temp.tar.zst"
 }
