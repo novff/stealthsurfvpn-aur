@@ -10,9 +10,6 @@ source=("stealthsurf.deb::https://cdn.stealthsurf.net/app/desktop/latest/Stealth
 sha256sums=('SKIP')
 
 package() {
-    # 1. Extract the .deb file (bsdtar natively supports 'ar' archives)
     bsdtar -xf "${srcdir}/stealthsurf.deb" -C "${srcdir}"
-    
-    # 2. Extract the actual payload (data.tar.zst, data.tar.xz, or data.tar.gz) into the package directory
     bsdtar -xf "${srcdir}"/data.tar.* -C "${pkgdir}"
 }
